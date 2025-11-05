@@ -2,18 +2,10 @@
 #include <vector>
 #include <string>
 #include <iomanip>
+#include "config.h"
+#include "models.h"
 
 using namespace std;
-
-struct Paciente {
-    string nome;
-    string cpf;
-    int idade;
-    string endereco;
-    string telefone;
-    string data_diagnostico;
-    string sintomas;
-};
 
 vector<Paciente> pacientes;
 
@@ -110,6 +102,11 @@ void menu() {
 }
 
 int main() {
+    if (!Config::ensureDirectories()) {
+        cerr << "Erro ao criar os diretorios necessarios.\n";
+        return 1;
+    }
+
     menu();
     return 0;
 }
