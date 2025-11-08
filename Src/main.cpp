@@ -2,8 +2,8 @@
 #include <vector>
 #include <string>
 #include <iomanip>
-#include "config.h"
-#include "models.h"
+#include "Config.h"
+#include "Models.h"
 
 using namespace std;
 
